@@ -1,23 +1,18 @@
 'use client';
-
 import React from 'react';
-
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-
 export default function ChallengePage() {
   const params = useParams();
   const challengeId = params.id as string;
   const [challenge, setChallenge] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
   useEffect(() => {
     if (!challengeId) {
       setLoading(false);
       return;
     }
-
     fetch(`https://songmatch-backend-production.up.railway.app/api/challenges/${challengeId}`)
       .then((res) => res.json())
       .then((data) => {
@@ -33,7 +28,6 @@ export default function ChallengePage() {
         setLoading(false);
       });
   }, [challengeId]);
-
   if (loading) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-5 text-white" style={{ background: 'linear-gradient(180deg, #1E0050 0%, #101B3B 60%, #081C2E 100%)' }}>
@@ -44,7 +38,6 @@ export default function ChallengePage() {
       </div>
     );
   }
-
   if (error || !challenge) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-5 text-white" style={{ background: 'linear-gradient(180deg, #1E0050 0%, #101B3B 60%, #081C2E 100%)' }}>
@@ -55,7 +48,6 @@ export default function ChallengePage() {
       </div>
     );
   }
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-5 text-white" style={{ background: 'linear-gradient(180deg, #1E0050 0%, #101B3B 60%, #081C2E 100%)' }}>
       <div className="text-center max-w-[400px]">
