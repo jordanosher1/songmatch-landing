@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["A9KC2ZGF68.com.songmatch.app"],
+        "components": [
+          {
+            "/": "/c/*",
+            "comment": "Challenge links"
+          }
+        ]
+      }
+    ]
+  }
+}
