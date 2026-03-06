@@ -58,7 +58,7 @@ export default function ChallengePage() {
           <div className="text-5xl font-bold text-[#FFD700] mb-3">{challenge.challenger_score.toFixed(2)}</div>
           <p className="text-sm text-[#A3DFFF]">points</p>
         </div>
-        <a href={`songmatch://challenge/${challengeId}`} className="block w-full py-4 px-6 rounded-full text-lg font-semibold bg-[#00FFE6] text-[#0D1B2A] mb-4 hover:opacity-80 transition-opacity text-center">
+        <a href={`songmatchapp://challenge/${challengeId}`} className="block w-full py-4 px-6 rounded-full text-lg font-semibold bg-[#00FFE6] text-[#0D1B2A] mb-4 hover:opacity-80 transition-opacity text-center">
           Open in SongMatch
         </a>
         <a href="https://apps.apple.com/app/songmatch" className="block w-full py-4 px-6 rounded-full text-lg font-semibold bg-transparent text-[#00FFE6] border-2 border-[#00FFE6] hover:opacity-80 transition-opacity text-center">
