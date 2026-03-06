@@ -13,7 +13,7 @@ export default function ChallengePage() {
       setLoading(false);
       return;
     }
-    fetch(`https://songmatch-backend-production.up.railway.app/api/challenges/${challengeId}`)
+    fetch(`https://songmatch-backend-production.up.railway.app/api/challenges/code/${challengeId}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 'ok') {
