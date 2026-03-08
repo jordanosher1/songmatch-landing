@@ -18,7 +18,7 @@ export async function GET(
 
   try {
     const res = await fetch(
-      `https://songmatch-backend-production.up.railway.app/api/challenges/${challengeId}`
+      `https://songmatch-backend-production.up.railway.app/api/challenges/code/${challengeId}`
     );
     const data = await res.json();
     if (data.status === 'ok' && data.challenge) {
