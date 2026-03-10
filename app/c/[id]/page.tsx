@@ -138,7 +138,27 @@ export default function ChallengePage() {
   }
 
   // Results view
-  if (isResults && challenge.winner) {
+  if (isResults) {
+    if (!challenge.winner) {
+      return (
+        <div style={bgStyle}>
+          <div style={containerStyle}>
+            <div style={logoStyle}>♪ SONGMATCH</div>
+            <div style={cardStyle}>
+              <p style={{ fontSize: '22px', fontWeight: 700, marginBottom: '12px' }}>
+                Results pending
+              </p>
+              <p style={{ fontSize: '17px', color: '#A3DFFF' }}>
+                This challenge hasn&apos;t been completed yet. Check back soon!
+              </p>
+            </div>
+            <a href="https://songmatchgame.com" style={outlineButtonStyle}>
+              Download SongMatch
+            </a>
+          </div>
+        </div>
+      );
+    }
     const winnerName = challenge.winner === 'challenger'
       ? challenge.challenger_display_name
       : challenge.responder_display_name;
